@@ -1,0 +1,82 @@
+/* Reset general para controlar el Box Model */
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Importante: incluye padding y border en el ancho total */
+}
+
+body 
+{
+    font-family: Satisfy , sans-serif;
+    background-color: #f4f4f4; /* Fondo
+    color: black; /*letra */
+}
+
+/* Barras superior e inferior */
+.barra-supinf
+{
+    background-color: pink;
+    color: white;
+    padding: 20px;/*tamaño barra*/
+    text-align: center;
+    font-size: 20px;/*tamaño letra*/
+    font-weight: bold;
+}
+
+/* Contenedor del Mosaico */
+.contenedor-mosaico 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px; /* Espaciado entre cajas (Margin externo) */
+}
+
+/* La "Caja" de cada producto (Box Model puro) */
+.caja-imagen
+{
+    background-color: white;
+    width: 300px;           /* Ancho del contenido */
+    border: 1px solid #ddd; /* Border inicial */
+    padding: 8px;           /* Espacio interno entre borde e imagen */
+    transition: all 0.3s ease; /* Suaviza el efecto del mouse */
+}
+
+/* RECONOCIMIENTO DEL MOUSE (Hover) */
+.caja-imagen:hover 
+{
+    border: 1px solid rgb(235, 102, 124); /* El borde cambia a verde */
+    transform: translateY(-5px); /* La caja sube un poco */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra para resaltar */
+    cursor: pointer;
+}
+
+/* Imagen dentro de la caja */
+.caja-imagen img 
+{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Texto informativo */
+.info 
+{
+    padding: 10px 5px;
+    text-align: left;
+}
+
+.info strong 
+{
+    font-size: 13px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info p 
+{
+    font-size: 11px;
+    color: #777;
+}
