@@ -1,0 +1,235 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root 
+{
+    --sidebar-width: 220px;
+    --color-rosa: #c8926b;
+    --color-fondo: #efdbc7;
+}
+
+body 
+{
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo);
+    /*Alinear sidebar y contenido */
+    display: flex; 
+}
+
+/* MENÚ LATERAL */
+.sidebar 
+{
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color:#cdae8f;
+    border-right: 2px solid var(--color-barra);
+    position: fixed;
+    padding: 20px;
+}
+
+.sidebar-header 
+{
+    font-size: 24px;
+    color: var(--color-barra);
+    border-bottom: 1px solid #5f3915;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.menu-lista 
+{
+    list-style: none;
+}
+
+.menu-lista li 
+{
+    margin-bottom: 20px;
+}
+
+/*letras de el menú*/
+.menu-lista a 
+{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    transition: 0.3s;
+    display: block;
+    padding: 5px;
+}
+
+.menu-lista a:hover 
+{
+    color: var(--color-barra);
+    /* Efecto de desplazamiento */
+    padding-left: 10px; 
+}
+
+.main-wrapper 
+{
+    /* Deja espacio para el menú */
+    margin-left: var(--sidebar-width); 
+    width: 100%;
+}
+
+.barra-supinf 
+{
+    background-color: #c8926b;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* IMAGENES  DE LOS ROLES*/
+.contenedor-mosaico 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 25px;
+}
+
+.caja-imagen 
+{
+    background-color: white;
+    width: 300px;
+    border: 1px solid #a18e65;
+    padding: 8px;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.enlace-menu
+{
+    text-decoration: none;
+    display: block;
+    pointer-events: auto; 
+}
+
+.enlace-menu:hover .caja-imagen
+{
+    border: 2px solid var(--color-barra);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.caja-imagen:hover 
+{
+    border: 2px solid var(--color-barra);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.caja-imagen img 
+{
+    width: 100%;
+    height: 250px; 
+    /* Evita que la imagen se deforme */
+    object-fit: cover;
+    display: block;
+}
+
+.info 
+{
+    padding: 10px 5px;
+}
+
+.info strong 
+{
+    font-size: 16px;
+    /*Color de letra de el titulo de la imagen */
+    color: black;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info p 
+{
+    font-size: 13px;
+    /*Color descripcion imagen*/
+    color: #777;
+}
+
+/*------------------ MODO OSCURO -------------------------*/
+
+/* Activa modo oscuro */
+body:has(#oscuro:target) {
+    background-color: #5b3f22;
+    color: white;
+}
+
+/* Barras superior e inferior */
+body:has(#oscuro:target) .barra-supinf {
+    background-color: #231507;
+    color: white;
+}
+
+/* Sidebar */
+body:has(#oscuro:target) .sidebar {
+    background-color: #2c2014;
+}
+
+/* Letras del menú */
+body:has(#oscuro:target) .menu-lista a {
+    color: white;
+}
+
+/* Hover del menú */
+body:has(#oscuro:target) .menu-lista a:hover {
+    color: #f5d7b2;
+}
+
+/* Cajas de imágenes */
+body:has(#oscuro:target) .caja-imagen {
+    background-color: #7e654c;
+    border-color: rgb(239, 221, 169);
+}
+
+/* Texto dentro de cajas */
+body:has(#oscuro:target) .info strong {
+    color: white;
+}
+
+body:has(#oscuro:target) .info p {
+    color: #ccc;
+}
+
+/* Botón modo oscuro */
+.modo-link {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    background-color: #2c2014; /* oscuro */
+    color: white;
+    padding: 6px 10px; /* más pequeño */
+    border-radius: 15px;
+    font-size: 12px;
+    border: none;
+}
+
+/* Botón modo claro */
+.modo-claro {
+    position: fixed;
+    top: 45px;
+    right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    background-color: #f5d7b2; /* claro */
+    color: black;
+    padding: 6px 10px; /* más pequeño */
+    border-radius: 15px;
+    font-size: 12px;
+    border: none;
+}
